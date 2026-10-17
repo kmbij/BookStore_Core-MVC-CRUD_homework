@@ -1,0 +1,9 @@
+@model Book
+@{ ViewData["Title"] = "編輯書籍"; }
+<h2>編輯書籍</h2>
+<form asp-action="Edit" class="col-md-8">
+    <input type="hidden" asp-for="Id" />
+    <partial name="_Form" model="Model" />
+    <button class="btn btn-primary">更新</button>
+    <a class="btn btn-secondary" asp-action="Index">返回</a>
+</form>

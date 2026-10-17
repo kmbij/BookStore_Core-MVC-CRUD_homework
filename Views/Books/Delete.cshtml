@@ -1,0 +1,13 @@
+@model Book
+@{ ViewData["Title"] = "刪除書籍"; }
+<h2 class="text-danger">確定要刪除這本書嗎？</h2>
+<dl class="row col-md-8">
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Title)</dt><dd class="col-sm-9">@Model.Title</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Author)</dt><dd class="col-sm-9">@Model.Author</dd>
+    <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Price)</dt><dd class="col-sm-9">@Model.Price.ToString("N0")</dd>
+</dl>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button class="btn btn-danger">確定刪除</button>
+    <a class="btn btn-secondary" asp-action="Index">取消</a>
+</form>
